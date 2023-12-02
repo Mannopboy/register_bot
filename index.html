@@ -9,5 +9,21 @@
 <input class="name" type="text">
 <input class="password" type="text">
 <button class="button">Send</button>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script>
+    let tg = window.Telegrem.WebApp,
+        input_name = document.querySelector('.name'),
+        input_password = document.querySelector('.password'),
+        button = document.querySelector('.button');
+    tg.expand;
+    button.addEventListener('click', () => {
+        info = {
+            'name': input_name.value,
+            'password': input_password.value,
+        }
+        tg.sendData(JSON.stringify(info));
+        tg.close;
+    })
+</script>
 </body>
 </html>
